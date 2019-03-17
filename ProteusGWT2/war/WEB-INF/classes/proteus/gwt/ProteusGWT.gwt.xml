@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='proteusgwt'>
+
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+
+	<!-- Inherit the default GWT style sheet. You can change -->
+	<!-- the theme of your GWT application by uncommenting -->
+	<!-- any one of the following lines. -->
+	<!-- <inherits name='com.google.gwt.user.theme.standard.Standard' /> -->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+	<inherits name='com.google.gwt.user.theme.standard.StandardResources' />
+	
+	<!-- Other module inherits -->
+
+	<!-- <inherits name='com.google.gwt.widgetideas.GWTCanvas' /> -->
+	<!-- <inherits name="com.google.gwt.gen2.event.Event" /> -->
+
+	<inherits name='gwt.g2d.g2d' /> 
+	<inherits name="com.google.gwt.xml.XML" />
+	<inherits name='ca.nanometrics.gflot.GFlot'/>
+	<inherits name='com.google.gwt.visualization.Visualization'/>
+	<!-- <inherits name='com.google.gwt.gen2.selection.Selection'/> -->
+	
+	<inherits name='emu.java.javaemu' />
+	
+	
+    <inherits name="com.google.gwt.logging.Logging" />
+    <set-property name="gwt.logging.logLevel" value="FINEST"/>
+    <set-property name="gwt.logging.enabled" value="TRUE"/>
+	<set-property name="gwt.logging.firebugHandler" value="DISABLED" />
+	<set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED" />
+	<set-property name="gwt.logging.consoleHandler" value="DISABLED" />
+	<set-property name="gwt.logging.developmentModeHandler" value="DISABLED" />
+	<set-property name="gwt.logging.popupHandler" value="DISABLED" />
+	<set-property name="gwt.logging.systemHandler" value="ENABLED" />
+    
+	<!-- Specify the app entry point class. -->
+	<entry-point class='proteus.gwt.client.app.ProteusGWT' />
+	
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
+	
+	<inherits name="proteus.gwt.ProteusGWT" />
+
+	<inherits name="com.gwtext.GwtExt"/>
+	
+	<stylesheet src="js/ext/resources/css/ext-all.css"/>
+	<script src="js/ext/adapter/ext/ext-base.js"/>
+	<script src="js/ext/ext-all.js"/>
+	<set-configuration-property name="UiBinder.useSafeHtmlTemplates" value="true" />
+	
+	
+
+  <!--  Append is awful on IE.  Use Array instead. -->
+  <replace-with class="gwt.g2d.client.graphics.canvas.CanvasInitializerIE">
+    <when-type-is class="gwt.g2d.client.graphics.canvas.CanvasInitializer"/>
+    <any>
+      <when-property-is name="user.agent" value="ie9"/>
+    </any>
+  </replace-with>
+</module>

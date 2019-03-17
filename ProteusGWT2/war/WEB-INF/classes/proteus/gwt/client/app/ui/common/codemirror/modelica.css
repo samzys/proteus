@@ -1,0 +1,10 @@
+.CodeMirror {height: 100%;}
+.activeline {background: #f0fcff !important;}
+      
+span.mo-keyword {color: #A30;font-weight:bold;}
+span.mo-atom {color: #A300A3;font-weight:bold;}
+span.mo-variabledef {color: #00A3A3;}
+span.mo-localvariable {color: #00A352;}
+span.mo-comment {color: #00A300;}
+span.mo-string {color: #0000A3;}
+span.html-tag {color: #A3A300;}

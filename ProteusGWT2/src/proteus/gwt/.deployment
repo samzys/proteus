@@ -1,0 +1,5 @@
+#Mon Mar 05 18:21:13 SGT 2012
+war.name=ProteusGWT.war
+compiler.style=OBFUSCATED
+server.path=C\:\\Users\\sam\\Documents\\tools\\apache-tomcat-6.0.18\\webapps
+compiler.memory.max=256m

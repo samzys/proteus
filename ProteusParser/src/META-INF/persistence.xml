@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="ProteusGWT" transaction-type="RESOURCE_LOCAL">
+    <provider>oracle.toplink.essentials.PersistenceProvider</provider>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <!-- Connection Options -->
+      <property name="toplink.jdbc.user" value="proteusgwt"/>
+      <property name="toplink.jdbc.password" value="w8x8LqWDZa5JEvaz"/>
+      <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/proteusgwt?autoReconnectForPools=true"/>
+      <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <!-- Connection Options -->
+      <!-- Generation Options -->
+      <property name="toplink.application-location" value="/"/>
+      <property name="toplink.create-ddl-jdbc-file-name" value="/tmp/createDDL.jdbc"/>
+      <property name="toplink.drop-ddl-jdbc-file-name" value="/tmp/dropDDL.jdbc"/>
+      <!-- Generation Options -->
+      <!-- Debugging Options -->
+      <property name="toplink.logging.level" value="INFO"/>
+      <!-- Debugging Options -->
+    </properties>
+  </persistence-unit>
+</persistence>

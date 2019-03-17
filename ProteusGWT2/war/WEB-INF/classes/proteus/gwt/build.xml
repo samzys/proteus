@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ImageViewer" default="all" basedir="C:\Users\Sam\workspace\ProteusGWT2">
+	<description>
+		This is build file for GWT module 'proteus.gwt.ProteusGWT' deployment.
+		GWT Designer generates it each time when you initiate deployment.
+		
+		You can use this file later for manual deployment, but keep in mind, that
+		classpath is hardcoded in it, so after changes in classpath you should
+		regenerate build file.
+	</description>
+
+	<property name="gwt.home" value="C:/Users/Sam/Documents/tools/gwt-2.3.0" />
+	<property name="gwt.module.id" value="proteus.gwt.ProteusGWT" />
+	<property name="war.name" value="ProteusGWT.war" />
+
+	<target name="jars" description="Package up the module project and required projects as jars">
+		<mkdir dir="war/WEB-INF/lib" />
+		<!--=== ProteusGWT2 ===-->
+		<jar destfile='war/WEB-INF/lib/ProteusGWT2.jar'>
+			<fileset dir="C:/Users/Sam/workspace/ProteusGWT2/src">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="C:/Users/Sam/workspace/ProteusGWT2/war/WEB-INF/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+		<copy todir='war/WEB-INF/lib'>
+			<fileset file="C:\Users\Sam\Documents\tools\gwt-2.3.0\gwt-dev.jar"/>
+			<fileset file="C:\Users\Sam\Documents\tools\gwt-2.3.0\validation-api-1.0.0.GA-sources.jar"/>
+			<fileset file="C:\Users\Sam\Documents\tools\gwt-2.3.0\validation-api-1.0.0.GA.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\commons-fileupload-1.2.1.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\commons-io-1.3.2.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\gflot-1.0.0.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\gson-1.7.1.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\gwt-visualization.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\gwtext.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\iText-5.0.2.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\jdom.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\junit-4.9b2.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\mysql-connector-java-5.1.6-bin.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\toplink-essentials.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\toplink-essentials-agent.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusParser\lib\gson-1.7.1.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusParser\lib\mysql-connector-java-5.1.6-bin.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusParser\lib\toplink-essentials.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusParser\lib\toplink-essentials-agent.jar"/>
+			<fileset file="C:\Users\Sam\workspace\ProteusGWT2\lib\gwt-g2d-v008.jar"/>
+		</copy>
+		<!--=== ProteusParser ===-->
+		<jar destfile='war/WEB-INF/lib/ProteusParser.jar'>
+			<fileset dir="C:/Users/Sam/workspace/ProteusParser/src">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="C:/Users/Sam/workspace/ProteusParser/bin">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>		
+	</target>
+
+	<target name="gwt-compile" description="Compile to JavaScript">
+		<java classname="com.google.gwt.dev.Compiler" fork="yes" failonerror="true" maxmemory="256m">
+			<classpath>
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/src" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusParser/src" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/war/WEB-INF/classes" />
+				<pathelement location="C:/Users/Sam/Documents/tools/gwt-2.3.0/gwt-user.jar" />
+				<pathelement location="C:/Users/Sam/Documents/tools/gwt-2.3.0/gwt-dev.jar" />
+				<pathelement location="C:/Users/Sam/Documents/tools/gwt-2.3.0/validation-api-1.0.0.GA-sources.jar" />
+				<pathelement location="C:/Users/Sam/Documents/tools/gwt-2.3.0/validation-api-1.0.0.GA.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/commons-fileupload-1.2.1.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/commons-io-1.3.2.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/gflot-1.0.0.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/gson-1.7.1.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/gwt-visualization.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/gwtext.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/iText-5.0.2.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/jdom.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/junit-4.9b2.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/mysql-connector-java-5.1.6-bin.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/toplink-essentials.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/toplink-essentials-agent.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusParser/bin" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusParser/lib/gson-1.7.1.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusParser/lib/mysql-connector-java-5.1.6-bin.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusParser/lib/toplink-essentials.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusParser/lib/toplink-essentials-agent.jar" />
+				<pathelement location="C:/Users/Sam/workspace/ProteusGWT2/lib/gwt-g2d-v008.jar" />
+				<pathelement location="C:/Users/Sam/Documents/tools/gwt-2.3.0/gwt-dev.jar" />
+			</classpath>
+			<arg value="-style"/>
+			<arg value="OBFUSCATED"/>
+			<arg value="${gwt.module.id}" />
+		</java>
+	</target>
+
+	<target name="war" depends="gwt-compile, jars">
+		<delete file="${war.name}" />
+		<jar destfile="${war.name}" basedir="war" duplicate="preserve" />
+	</target>
+	
+	<target name="deploy" depends="war">
+		<move file="${war.name}" todir="C:/Users/Sam/Documents/tools/apache-tomcat-6.0.18/webapps" />
+	</target>
+
+	<target name="all" depends="deploy" />
+
+</project>

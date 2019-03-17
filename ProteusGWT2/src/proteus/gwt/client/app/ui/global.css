@@ -1,0 +1,418 @@
+@CHARSET "UTF-8";
+
+body,table {
+	font-size: small;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #000;
+	background: #fff;
+}
+
+.gwt-PushButton {
+	border: 2px solid transparent;
+	margin: 0px 0px;
+	padding: 2px 2px;
+	font-size: 100%;
+	cursor: pointer;
+	background-color: transparent;
+	width: 24px;
+	height: 28px;
+	display: table-cell;
+}
+
+.gwt-PushButton-up
+.gwt-PushButton-up-hovering {
+	border: 2px solid transparent;
+	background-color: transparent;
+}
+
+.gwt-PushButton-down
+.gwt-PushButton-down-hovering {
+	border: none;
+	background-color: #bbb;
+}
+
+.gwt-PushButton-up-hovering {
+	border: 2px solid #99F;
+	background-color: transparent;
+}
+
+.gwt-PushButton-down-hovering {
+	border: 2px solid #99F;
+	background-color: #bbb;
+}
+
+.gwt-ToggleButton {
+	border: 1px outset #666;
+	margin: 4px 4px;
+	font-size: 80%;
+	cursor: hand;
+	cursor: pointer;
+	height: 13px;
+}
+
+.gwt-ToggleButton-up
+.gwt-ToggleButton-up-hovering {
+	padding: 1px 4px 4px 6px;
+}
+
+.gwt-ToggleButton-down
+.gwt-ToggleButton-down-hovering {
+	border: 1px inset #666;
+	padding: 2px 5px 3px 5px;
+}
+
+.gwt-ToggleButton-up-hovering {
+	border: 1px outset #ADF;
+}
+
+.gwt-SplitLayoutPanel {
+	
+}
+
+.gwt-SplitLayoutPanel-HDragger {
+	border: none;
+	background: none;
+	background-color: #C0C7D9;
+	color: transparent;
+	width: 1px;
+	cursor: col-resize;
+}
+
+.gwt-SplitLayoutPanel-VDragger {
+	border: none;
+	background: none;
+	background-color: #C0C7D9;
+	color: transparent;
+	height: 1px;
+	cursor: row-resize;
+}
+
+/***********************************************************
+*                         MenuBar
+***********************************************************/
+.gwt-MenuBar-horizontal {
+	margin: 0 0;
+	padding: 0 0;
+	cursor: default;
+	background: #DEE4ED;
+	border-top: 2px solid #3B5999;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+
+.gwt-MenuBar {
+	background-color: #DEE4ED;
+}
+
+.label-style {
+	margin: 0 auto;
+	padding: 2px 6px 4px 1px;
+	color: green;
+}
+
+.gwt-MenuBar .gwt-MenuItem {
+	margin: 0 auto;
+	padding: 2px 10px;
+	cursor: default;
+}
+
+.gwt-MenuBar .gwt-MenuItem-selected {
+	margin: 0 auto;
+	padding: 2px 10px;
+	cursor: default;
+	background-color: #CAD3E2;
+}
+
+.gwt-MenuBar-vertical {
+	margin-top: 0px;
+	margin-left: 0px;
+	background: white;
+}
+
+.gwt-MenuBar-vertical table {
+	border-collapse: collapse;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem {
+	padding: 4px 14px 4px 1px;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator {
+	padding: 2px 0px;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator .menuSeparatorInner {
+	height: 1px;
+	padding: 0px;
+	border: 0px;
+	border-top: 1px solid #777777;
+	background: #ddddee;
+	overflow: hidden;
+}
+
+.gwt-MenuBar-vertical .subMenuIcon {
+	padding-right: 4px;
+}
+
+.gwt-MenuBar-vertical .subMenuIcon-selected {
+	background: #E0EDFE;
+}
+
+.gwt-MenuBarPopup {
+	margin: 0px 0px 0px 3px;
+}
+
+.gwt-MenuBarPopup .menuPopupTopCenter {
+	background: url(proteusgwt/gwt/standard/images/hborder.png) 0px -12px
+		repeat-x;
+}
+
+.gwt-MenuBarPopup .menuPopupBottomCenter {
+	background: url(proteusgwt/gwt/standard/images/hborder.png) 0px -13px
+		repeat-x;
+	-background: url(proteusgwt/gwt/standard/images/hborder_ie6.png) 0px
+		-13px repeat-x;
+}
+
+.gwt-MenuBarPopup .menuPopupMiddleLeft {
+	background: url(proteusgwt/gwt/standard/images/vborder.png) -12px 0px
+		repeat-y;
+	-background: url(proteusgwt/gwt/standard/images/vborder_ie6.png) -12px
+		0px repeat-y;
+}
+
+.gwt-MenuBarPopup .menuPopupMiddleRight {
+	background: url(proteusgwt/gwt/standard/images/vborder.png) -13px 0px
+		repeat-y;
+	-background: url(proteusgwt/gwt/standard/images/vborder_ie6.png) -13px
+		0px repeat-y;
+}
+
+.gwt-MenuBarPopup .menuPopupTopLeftInner {
+	width: 5px;
+	height: 5px;
+	zoom: 1;
+}
+
+.gwt-MenuBarPopup .menuPopupTopRightInner {
+	width: 8px;
+	height: 5px;
+	zoom: 1;
+}
+
+.gwt-MenuBarPopup .menuPopupBottomLeftInner {
+	width: 5px;
+	height: 8px;
+	zoom: 1;
+}
+
+.gwt-MenuBarPopup .menuPopupBottomRightInner {
+	width: 8px;
+	height: 8px;
+	zoom: 1;
+}
+
+.gwt-MenuBarPopup .menuPopupTopLeft {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat 0px
+		-36px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat 0px -36px;
+}
+
+.gwt-MenuBarPopup .menuPopupTopRight {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat
+		-5px -36px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat -5px -36px;
+}
+
+.gwt-MenuBarPopup .menuPopupBottomLeft {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat 0px
+		-41px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat 0px -41px;
+}
+
+.gwt-MenuBarPopup .menuPopupBottomRight {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat
+		-5px -41px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat -5px -41px;
+}
+
+
+.gwt-DialogBox .Caption {
+	background: #e3e8f3 url(gwtuitest/gwt/standard/images/hborder.png)
+		repeat-x 0px -2003px;
+	padding: 4px 4px 4px 8px;
+	cursor: default;
+	border-bottom: 1px solid #bbbbbb;
+	border-top: 5px solid #d0e4f6;
+}
+
+.gwt-DialogBox .dialogContent {
+	
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+	padding: 3px;
+	background: white;
+}
+
+.gwt-DialogBox .dialogBottomCenter {
+	background: url(proteusgwt/gwt/standard/images/hborder.png) repeat-x 0px
+		-4px;
+	-background: url(proteusgwt/gwt/standard/images/hborder_ie6.png)
+		repeat-x 0px -4px;
+}
+
+.gwt-DialogBox .dialogMiddleLeft {
+	background: url(proteusgwt/gwt/standard/images/vborder.png) repeat-y;
+}
+
+.gwt-DialogBox .dialogMiddleRight {
+	background: url(proteusgwt/gwt/standard/images/vborder.png) repeat-y
+		-4px 0px;
+	-background: url(proteusgwt/gwt/standard/images/vborder_ie6.png)
+		repeat-y -4px 0px;
+}
+
+.gwt-DialogBox .dialogTopLeftInner {
+	width: 5px;
+	zoom: 1;
+}
+
+.gwt-DialogBox .dialogTopRightInner {
+	width: 8px;
+	zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomLeftInner {
+	width: 5px;
+	height: 8px;
+	zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomRightInner {
+	width: 5px;
+	height: 8px;
+	zoom: 1;
+}
+
+.gwt-DialogBox .dialogTopLeft {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat
+		-13px 0px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat -13px 0px;
+}
+
+.gwt-DialogBox .dialogTopRight {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat
+		-18px 0px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat -18px 0px;
+}
+
+.gwt-DialogBox .dialogBottomLeft {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat 0px
+		-15px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat 0px -15px;
+}
+
+.gwt-DialogBox .dialogBottomRight {
+	background: url(proteusgwt/gwt/standard/images/corner.png) no-repeat
+		-5px -15px;
+	-background: url(proteusgwt/gwt/standard/images/corner_ie6.png)
+		no-repeat -5px -15px;
+}
+
+html>body .gwt-DialogBox {
+	
+}
+
+* html .gwt-DialogBox .dialogTopLeftInner {
+	width: 5px;
+	overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogTopRightInner {
+	width: 8px;
+	overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogBottomLeftInner {
+	width: 5px;
+	height: 8px;
+	overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogBottomRightInner {
+	width: 8px;
+	height: 8px;
+	overflow: hidden;
+}
+
+.cw-DialogBox {
+	
+}
+
+/***********************************************************
+*                         TabLayoutPanel
+***********************************************************/
+.gwt-TabLayoutPanel {
+	margin-top: 1px;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTabs {
+	
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelContent {
+	border-color: #C0C7D9;
+	border-style: solid;
+	border-width: 3px 0px 2px;
+	overflow: hidden;
+	padding: 6px;
+	background: #FFFFFF;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab {
+	margin-left: 6px;
+	padding: 3px 8px 3px 8px;
+	cursor: pointer;
+	cursor: hand;
+	color: black;
+	font-size: 1.2em;
+	text-align: center;
+	background: #DEE4ED;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab-selected {
+	cursor: default;
+	background: #C0C7D9;
+	font-size: 1.2em;
+	color: black;
+}
+
+.gwt-PopupPanel {
+	border: 3px solid #e7e7e7;
+	padding: 3px;
+	background: white;
+}
+
+.floatingStatus {
+	border: 0;
+	padding: 5px;
+	background: #FFF1A8;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.tabLink {
+	border: 0;
+}

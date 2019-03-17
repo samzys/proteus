@@ -1,0 +1,1 @@
+{"ID":"2016","diagramGraphic":{"graphicList":[]},"name":"For","restriction":"class","wholeName":"ModelicaReference.For","comment":"for","arrayFormList":[],"iconGraphicList":[],"connects":[],"extendComps":[],"includeComps":[],"superIncludeArgList":[],"parameters":[]}

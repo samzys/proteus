@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="sam build proteusgwt" default="all" basedir="D:\workspace\ProteusGWT">
+	<description>
+		This is build file for GWT module 'proteus.gwt.ProteusGWT' deployment.
+		GWT Designer generates it each time when you initiate deployment.
+		
+		You can use this file later for manual deployment, but keep in mind, that
+		classpath is hardcoded in it, so after changes in classpath you should
+		regenerate build file.
+	</description>
+
+	<property name="gwt.home" value="D:/tools/eclipse2/plugins/com.google.gwt.eclipse.sdkbundle.2.2.0_2.2.0.v201102111810/gwt-2.2.0" />
+	<property name="gwt.module.id" value="proteus.gwt.ProteusGWT" />
+	<property name="war.name" value="ProteusGWT.war" />
+
+	<target name="jars" description="Package up the module project and required projects as jars">
+		<mkdir dir="war/WEB-INF/lib" />
+		<!--=== ProteusGWT ===-->
+		<jar destfile='war/WEB-INF/lib/ProteusGWT.jar'>
+			<fileset dir="D:/workspace/ProteusGWT/src">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="D:/workspace/ProteusGWT/war/WEB-INF/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+		<copy todir='war/WEB-INF/lib'>
+			<fileset file="D:\tools\eclipse2\plugins\com.google.gwt.eclipse.sdkbundle.2.2.0_2.2.0.v201102111810\gwt-2.2.0\gwt-dev.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\gwt-g2d.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\gwt-visualization.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\gwtext.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\junit-4.9b2.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\mysql-connector-java-5.1.6-bin.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\toplink-essentials.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\toplink-essentials-agent.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\gflot-1.0.0.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\jdom.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\iText-5.0.2.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\commons-fileupload-1.2.1.jar"/>
+			<fileset file="D:\workspace\ProteusGWT\lib\commons-io-1.3.2.jar"/>
+		</copy>		
+	</target>
+
+	<target name="gwt-compile" description="Compile to JavaScript">
+		<java classname="com.google.gwt.dev.Compiler" fork="yes" failonerror="true" maxmemory="256m">
+			<classpath>
+				<pathelement location="D:/workspace/ProteusGWT/src" />
+				<pathelement location="D:/workspace/ProteusGWT/war/WEB-INF/classes" />
+				<pathelement location="D:/tools/eclipse2/plugins/com.google.gwt.eclipse.sdkbundle.2.2.0_2.2.0.v201102111810/gwt-2.2.0/gwt-user.jar" />
+				<pathelement location="D:/tools/eclipse2/plugins/com.google.gwt.eclipse.sdkbundle.2.2.0_2.2.0.v201102111810/gwt-2.2.0/gwt-dev.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/gwt-g2d.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/gwt-visualization.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/gwtext.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/junit-4.9b2.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/mysql-connector-java-5.1.6-bin.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/toplink-essentials.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/toplink-essentials-agent.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/gflot-1.0.0.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/jdom.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/iText-5.0.2.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/commons-fileupload-1.2.1.jar" />
+				<pathelement location="D:/workspace/ProteusGWT/lib/commons-io-1.3.2.jar" />
+				<pathelement location="D:/tools/eclipse2/plugins/com.google.gwt.eclipse.sdkbundle.2.2.0_2.2.0.v201102111810/gwt-2.2.0/gwt-dev.jar" />
+			</classpath>
+			<arg value="-style"/>
+			<arg value="OBFUSCATED"/>
+			<arg value="${gwt.module.id}" />
+		</java>
+	</target>
+
+	<target name="war" depends="gwt-compile, jars">
+		<delete file="${war.name}" />
+		<jar destfile="${war.name}" basedir="war" duplicate="preserve" />
+	</target>
+	
+	<target name="war-pure">
+			<delete file="${war.name}" />
+			<jar destfile="${war.name}" basedir="war" duplicate="preserve" />
+		</target>
+		
+		
+	<target name="deploy" depends="war">
+		<move file="${war.name}" todir="C:/Program Files/Apache Software Foundation/Tomcat 6.0/webapps" />
+	</target>
+
+	<target name="all" depends="deploy" />
+
+</project>

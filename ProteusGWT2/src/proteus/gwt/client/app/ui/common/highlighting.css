@@ -1,0 +1,25 @@
+pre.code {
+	font-family: Bitstream Vera Sans Mono, Courier New; 
+	font-size: 11pt;
+	font-weight: normal;
+	padding: 4px;
+}
+	
+.code span.comments {
+	color:#0A5900;
+	font-weight: bold;
+}
+
+.code span.strings {
+	color:#308425;
+	font-weight: bold;
+}
+
+.code span.keywords {
+	color:#ff0078;
+	font-weight: bold;
+}
+
+.code span.numbers {
+	color:#f2c47f;
+}

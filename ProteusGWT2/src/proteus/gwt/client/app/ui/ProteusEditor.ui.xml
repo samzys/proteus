@@ -1,0 +1,38 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:protmenu="urn:import:proteus.gwt.client.app.ui.menu"
+	xmlns:prot="urn:import:proteus.gwt.client.app.ui">
+	<ui:style>
+		
+	</ui:style>
+	<g:DockLayoutPanel unit='PX' ui:field="mainLayout">
+		<g:north size='27'>
+						<protmenu:ProteusMainMenu ui:field="proteusMainMenu"></protmenu:ProteusMainMenu>
+		</g:north>
+		<g:north size='32'>
+			<prot:EditorToolbar ui:field="editorToolbar"></prot:EditorToolbar>
+		</g:north>
+
+		<g:center>
+			<g:SplitLayoutPanel ui:field="splitLayoutPanel">
+				<g:west size='245'>
+					<prot:ComponentsTreePanel ui:field="componentsTreePanel"></prot:ComponentsTreePanel>
+				</g:west>
+				<g:south size="100.0">
+					<prot:MessagePanel ui:field="infoMsgPanel"></prot:MessagePanel>
+				</g:south>
+				<g:center size="100.0">
+					<prot:TabCanvas ui:field="tabCanvas"></prot:TabCanvas>
+				</g:center>
+			</g:SplitLayoutPanel>
+		</g:center>
+
+
+		<!--
+			<g:south size='30'> <g:HTML> <div style="text-align: center"> 2011 ©
+			Nanyang Technological University. All rights reserved. </div>
+			</g:HTML> </g:south>
+		-->
+	</g:DockLayoutPanel>
+
+</ui:UiBinder> 

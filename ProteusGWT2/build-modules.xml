@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ProteusGWT" default="build" basedir=".">
+	<!-- Configure path to GWT SDK -->
+	<!--property name="gwt.sdk" location="C:\gwtLibraries\gwt-2.1.0" /-->
+	<property name="gwt.sdk" location="D:\tools\eclipse2\plugins\com.google.gwt.eclipse.sdkbundle.2.2.0_2.2.0.v201102111810\gwt-2.2.0" />
+	<!-- <property name="gwt.sdk" location="D:\Program Files\eclipse-galileo\plugins\com.google.gwt.eclipse.sdkbundle.2.0.1_2.0.1.v201002021445\gwt-2.0.1" /> -->
+	<!-- <property name="gwt.sdk" location="D:\Program Files\eclipse-galileo\plugins\com.google.gwt.eclipse.sdkbundle.win32_1.7.1.v200909221731\gwt-windows-1.7.1" /> -->
+
+	<!-- SWT on Mac requires the -XstartOFirstThreadFlag. -->
+	<condition property="XstartOnFirstThreadFlag" value="-XstartOnFirstThread"
+    else="-Dgwt.dummy.arg1=">
+		<os family="mac"/>
+	</condition>
+
+	<!-- SWT on Mac requires the -d32 flag if the VM is 64-bit. -->
+	<condition property="d32Flag" value="-d32" else="-Dgwt.dummy.arg2=">
+		<and>
+			<os family="mac"/>
+			<equals arg1="${sun.arch.data.model}" arg2="64"/>
+		</and>
+	</condition>
+
+	<path id="project.class.path">
+		<pathelement location="war/WEB-INF/classes"/>
+		<pathelement location="${gwt.sdk}/gwt-user.jar"/>
+		<fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>
+		<!-- Add any additional non-server libs (such as JUnit) -->
+		<fileset dir="war/WEB-INF/lib" includes="**/*.jar"/>
+		
+	</path>
+
+	<target name="libs" description="Copy libs to WEB-INF/lib">
+		<mkdir dir="war/WEB-INF/lib" />
+		<copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" />
+		<!-- Add any additional server libs that need to be copied -->
+	</target>
+
+	<target name="javac" depends="libs" description="Compile java source">
+		<mkdir dir="war/WEB-INF/classes"/>
+		<javac srcdir="src" includes="**" encoding="utf-8"
+        destdir="war/WEB-INF/classes"
+        source="1.5" target="1.5" nowarn="true"
+        debug="true" debuglevel="lines,vars,source">
+			<classpath refid="project.class.path"/>
+		</javac>
+		<copy todir="war/WEB-INF/classes">
+			<fileset dir="src" excludes="**/*.java"/>
+		</copy>
+	</target>
+
+	<target name="hosted" depends="javac" description="Hosted Mode">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.HostedMode">
+			<classpath>
+				<pathelement location="src"/>
+				<path refid="project.class.path"/>
+			</classpath>
+			<jvmarg value="-Xmx512M"/>
+			<jvmarg value="${XstartOnFirstThreadFlag}"/>
+			<jvmarg value="${d32Flag}"/>
+			<arg value="-startupUrl"/>
+			<arg value="RunApplication.html#open=156"/>
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg value="proteus.gwt.ProteusGWT"/>
+		</java>
+	</target>
+	
+	<target name="devmode" depends="javac" description="Run development mode">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode">
+			<classpath>
+				<pathelement location="src"/>
+				<path refid="project.class.path"/>
+			</classpath>
+			<jvmarg value="-Xmx1024M"/>
+			<jvmarg value="${XstartOnFirstThreadFlag}"/>
+			<jvmarg value="${d32Flag}"/>
+			<arg value="-startupUrl"/>
+			<arg value="RunApplication.html#open=156"/>
+			<arg value="-port"/>
+			<arg value="8080"/>
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg value="gleilab.gwt.StockWatcher"/>
+		</java>
+	</target>
+
+	<target name="gwtc" depends="module_1" 
+  		description="GWT compile to JavaScript">
+	</target>
+
+	<target name="module_1" depends="javac" description="GWT compile to JavaScript">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+			<classpath>
+				<pathelement location="src"/>
+				<path refid="project.class.path"/>
+			</classpath>
+			<!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+			<jvmarg value="-Xmx1440M"/>
+			<jvmarg value="${XstartOnFirstThreadFlag}"/>
+			<jvmarg value="${d32Flag}"/>
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg value="-localWorkers"/>
+			<arg value="2"/>
+			<arg value="proteus.gwt.ProteusGWT"/>
+		</java>
+	</target>
+
+	
+	
+	<target name="build" depends="gwtc" description="Build this project" />
+
+	<target name="war" depends="build" description="Create a war file">
+		<zip destfile="ProteusGWT.war" basedir="war" />
+	</target>
+
+	<target name="clean" description="Cleans this project">
+		<delete dir="war/WEB-INF/classes" failonerror="false" />
+		<delete dir="war/proteusgwt" failonerror="false" />
+	
+	</target>
+
+	<target name="rebuild_javac" depends="clean, javac" description="clean and javac">
+	</target>
+	<target name="rebuild" depends="clean, build" description="clean and build">
+	</target>
+</project>

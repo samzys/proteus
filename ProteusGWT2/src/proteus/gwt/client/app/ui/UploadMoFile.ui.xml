@@ -1,0 +1,52 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:style>
+		.message {
+			display: none;
+		}
+		.hide {
+			display: none;
+		}
+	</ui:style>
+	
+	<ui:style field="messageStyle"
+		type="proteus.gwt.client.app.ui.UploadMoFile.MessageStyle">
+		.showWaitMessage {
+			font-weight: bold;
+			color: green;
+			border: 1px solid blue;
+			padding: 2px 4px;
+			margin: 2px 2px;
+			display: block;
+		}
+		.showFailMessage {
+			font-weight: bold;
+			color: red;
+			border: 1px solid blue;
+			padding: 2px 4px;
+			margin: 2px 2px;
+			display: block;
+		}
+	</ui:style>
+	
+	<g:DialogBox ui:field="box" text="Open mo File" width="300px">
+		<g:FormPanel ui:field="formPanel">
+			<g:VerticalPanel>
+				<g:Label ui:field="lbMessage" styleName="{style.message}"></g:Label>
+				<g:FileUpload ui:field="fileUpload"></g:FileUpload>
+				<g:Label>Name:</g:Label>
+				<g:TextBox ui:field="tbName" width="120px"></g:TextBox>
+				
+				<g:Label>Description:</g:Label>
+				<g:TextArea ui:field="taDescription" width="200px" height="150px"></g:TextArea>
+				
+				<g:HorizontalPanel>
+					<g:Button ui:field="bSubmit">Submit</g:Button>
+					<g:Button ui:field="bClose">Close</g:Button>
+				</g:HorizontalPanel>
+			</g:VerticalPanel>
+		</g:FormPanel>
+	</g:DialogBox>
+</ui:UiBinder> 

@@ -1,0 +1,4 @@
+# Module proteusgwt
+# RPC service class, partial path of RPC policy file
+com.google.gwt.logging.shared.RemoteLoggingService, CB62F0C58DA4C40BCC5061E8CB200E0C.gwt.rpc
+proteus.gwt.client.proxy.ProteusRemoteService, 0F6EA92AD086793719AD0A9139660DD7.gwt.rpc

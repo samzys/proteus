@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.panel {		
+			width:50px;				
+			height:20px;
+			padding-top:4px;
+			background: white;
+		}
+		
+		.images {			
+			margin-left: 1px;
+			padding-left:2px;
+			padding-right:2px;
+		}
+		
+	</ui:style>
+
+	<g:HorizontalPanel addStyleNames="{style.panel}">
+
+		<g:Image ui:field="imgPrevious" addStyleNames="{style.images}"
+			url="resources/images/previous.png" title="Previous" />
+		<g:Image ui:field="imgNext" addStyleNames="{style.images}"
+			url="resources/images/next.png" title="Next" />
+		
+		
+	</g:HorizontalPanel>
+		
+</ui:UiBinder> 

@@ -1,0 +1,2 @@
+serviceClass: proteus.gwt.client.proxy.ProteusRemoteService
+path: 0F6EA92AD086793719AD0A9139660DD7.gwt.rpc

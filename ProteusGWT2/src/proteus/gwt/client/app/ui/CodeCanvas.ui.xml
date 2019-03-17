@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:c='urn:import:proteus.gwt.client.app.ui.common.codemirror'>
+	<ui:style>
+		.html{
+			
+			width: auto;
+			height: auto;
+		}
+		.panel{
+			border: 1px solid  #bbb;			
+			margin: 2px;
+			border-radius: 5px;
+		}
+	</ui:style>
+
+		<c:CodeMirrorTextArea styleName="{style.panel}" ui:field="content" width="99%" height="99%" />
+
+</ui:UiBinder> 

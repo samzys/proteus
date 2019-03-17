@@ -1,0 +1,1 @@
+{"ID":"2345","diagramGraphic":{"graphicList":[]},"name":"ThermodynamicState","restriction":"record","wholeName":"Modelica.Media.IdealGases.Common.MixtureGasNasa.ThermodynamicState","comment":"thermodynamic state variables","arrayFormList":[],"iconGraphicList":[],"connects":[],"extendComps":[],"includeComps":[],"superIncludeArgList":[],"parameters":[]}

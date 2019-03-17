@@ -1,0 +1,7 @@
+1. componentjson folder changes name from resources/files/ComponentXML to resources/files/ComponentJSON
+
+
+TODO
+1. disable the dragComponent event when doubleClick event is detected
+2. ComponentWriter refresh ComponentJson file
+3. ModelWriter refresh ModelJson file

@@ -1,0 +1,1 @@
+{"ID":"1982","diagramGraphic":{"graphicList":[]},"name":"Mod","restriction":"class","wholeName":"ModelicaReference.Operators.Mod","comment":"mod","arrayFormList":[],"iconGraphicList":[],"connects":[],"extendComps":[],"includeComps":[],"superIncludeArgList":[],"parameters":[]}

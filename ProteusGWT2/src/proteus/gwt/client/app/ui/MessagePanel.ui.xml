@@ -1,0 +1,68 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.panel {
+			margin-top: 2px;
+		}
+		
+		.panel .gwt-TabLayoutPanelTabs {
+			
+		}
+		
+		.panel .gwt-TabLayoutPanelContent {
+			border-color: #C0C7D9;
+			border-style: solid;
+			border-width: 3px 0px 2px;
+			overflow: hidden;
+			padding: 6px;
+			background: #FFFFFF;
+		}
+		
+		.panel .gwt-TabLayoutPanelTab {
+			margin-left: 6px;
+			padding: 3px 8px 3px 8px;
+			cursor: pointer;
+			cursor: hand;
+			color: black;
+			font-size: 1.2em;
+			text-align: center;
+			background: #DEE4ED;
+		}
+		
+		.panel .gwt-TabLayoutPanelTab-selected {
+			cursor: default;
+			background: #C0C7D9;
+			font-size: 1.2em;
+			color: black;
+		}
+	</ui:style>
+	<g:TabLayoutPanel barHeight="2" barUnit="EM" width="100%"
+		ui:field="tabPanel" height="100%" addStyleNames="{style.panel}" >
+		<g:tab>
+			<g:header>General</g:header>
+			<g:ScrollPanel ui:field="scrollGeneral">
+				<g:HTML wordWrap="true" ui:field="htmlGeneral" />
+			</g:ScrollPanel>
+		</g:tab>
+		<g:tab>
+			<g:header>Info</g:header>
+			<g:ScrollPanel ui:field="scrollInfo">
+				<g:HTML wordWrap="true" ui:field="htmlInfo" />
+			</g:ScrollPanel>
+		</g:tab>
+		<g:tab>
+			<g:header>Warning</g:header>
+			<g:ScrollPanel ui:field="scrollWarning">
+				<g:HTML wordWrap="true" ui:field="htmlWarning" />
+			</g:ScrollPanel>
+		</g:tab>
+		<g:tab>
+			<g:header>Error</g:header>
+			<g:ScrollPanel ui:field="scrollError">
+				<g:HTML wordWrap="true" ui:field="htmlError" />
+			</g:ScrollPanel>
+		</g:tab>
+
+	</g:TabLayoutPanel>
+</ui:UiBinder> 

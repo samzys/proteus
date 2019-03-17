@@ -1,0 +1,106 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.panel {
+			background-image: url('resources/images/toolbar-back.png');
+			width: 100%;
+		}
+		.newModule{
+			background: url(resources/images/new.png) no-repeat center;
+		}
+		.undo {
+			background: url(resources/images/undo.png) no-repeat center;
+		}
+		
+		.redo {
+			background: url(resources/images/redo.png) no-repeat center;
+		}
+		.save {
+			background: url(resources/images/save.png) no-repeat center;
+		}
+		.zoomIn {
+			background: url(resources/images/zoomin.png) no-repeat center;
+		}
+		
+		.zoomOut {
+			background: url(resources/images/zoomout.png) no-repeat center;
+		}
+		
+		.zoomReset {
+			background: url(resources/images/zoomreset.png) no-repeat center;
+		}		
+		
+		.rotateCW {
+			background: url(resources/images/rotate_cw.png) no-repeat center;
+		}
+		
+		.rotateCCW {
+			background: url(resources/images/rotate_ccw.png) no-repeat center;
+		}
+		
+		.flipHorizontal {
+			background: url(resources/images/flip_horizontal.png) no-repeat center;
+		}
+		
+		.flipVertical {
+			background: url(resources/images/flip_vertical.png) no-repeat center;
+		}
+		
+		.zoom {
+			background: url(resources/images/zoom.png) no-repeat center;
+		}
+		
+		.simulate {
+			background: url(resources/images/run.png) no-repeat center;	
+		}
+		
+		.simulate-inprogress {
+			background: url(resources/images/running.gif) no-repeat center;	
+		}
+		
+		.simulate-result {
+			background: url(resources/images/charts.png) no-repeat center;	
+		}
+	</ui:style>
+	
+	<ui:style field="simulateBtnStyle"  type="proteus.gwt.client.app.ui.EditorToolbar.SimulateBtnStyle">
+		.stopped {
+			background: url(resources/images/run.png) no-repeat center;	
+	     }
+	    .running {
+			background: url(resources/images/running.gif) no-repeat center;	
+	    }
+   </ui:style>
+
+	<g:HorizontalPanel styleName="{style.panel}"  >
+		<g:FlowPanel>
+			<g:PushButton addStyleNames="{style.newModule}" ui:field="pbNewModule"
+				title="new Module"></g:PushButton>
+				<g:PushButton addStyleNames="{style.save}" ui:field="pbSave"
+				title="save"></g:PushButton>
+			<g:PushButton addStyleNames="{style.undo}" ui:field="pbUndo"
+				title="undo"></g:PushButton>
+			<g:PushButton addStyleNames="{style.redo}" ui:field="pbRedo"
+				title="redo"></g:PushButton>
+			<g:PushButton addStyleNames="{style.zoomIn}" ui:field="pbZoomIn"
+				title="zoom in"></g:PushButton>
+			<g:PushButton addStyleNames="{style.zoomOut}" ui:field="pbZoomOut"
+				title="zoom out"></g:PushButton>
+			<g:PushButton addStyleNames="{style.zoomReset}"
+				ui:field="pbZoomReset" title="reset zoom"></g:PushButton>
+			<g:PushButton addStyleNames="{style.rotateCW}" ui:field="pbRotateClockwise" 
+				title="rotate clockwise"></g:PushButton>
+			<g:PushButton addStyleNames="{style.rotateCCW}" ui:field="pbRotateAntiClockwise" 
+				title="rotate counter clockwise"></g:PushButton>
+			<g:PushButton addStyleNames="{style.flipHorizontal}" ui:field="pbFlipHorizontal" 
+				title="flip horizontal"></g:PushButton>
+			<g:PushButton addStyleNames="{style.flipVertical}" ui:field="pbFlipVertical" 
+				title="flip vertical"></g:PushButton>				
+			<g:PushButton addStyleNames="{style.simulate}" ui:field="pbSimulate" 
+				title="run simulation"></g:PushButton>		
+			<g:PushButton addStyleNames="{style.simulate-result}" ui:field="pbSimulateResult" 
+				title="plot simulation result"></g:PushButton>	
+		</g:FlowPanel>
+	</g:HorizontalPanel>
+</ui:UiBinder> 

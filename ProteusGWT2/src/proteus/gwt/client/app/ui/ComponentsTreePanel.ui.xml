@@ -1,0 +1,49 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.panel{
+			margin-top: 6px;
+		}
+	</ui:style>
+
+	<g:DockLayoutPanel unit='PX'>
+
+		<g:north size='30'>
+			<g:HorizontalPanel addStyleNames="{style.panel}">
+
+				<g:HTML>
+					<font size="3">Search:</font>
+				</g:HTML>
+				<g:TextBox ui:field="searchBox" g:title="Press 'Enter' to Search"/>
+				<g:ToggleButton ui:field="filterButton" >
+					<g:upFace>
+						<img src="resources/images/filter.png" />
+					</g:upFace>
+					<g:downFace>
+						<img src="resources/images/filter-no.png" />
+					</g:downFace>
+				</g:ToggleButton>
+
+			</g:HorizontalPanel>
+		</g:north>
+
+
+		<g:center>
+			<g:SplitLayoutPanel>
+				<g:center>
+					<g:ScrollPanel >
+						<g:Tree ui:field="classNamesTree">
+						</g:Tree>
+					</g:ScrollPanel>
+				</g:center>
+				<g:south size="250">
+					<g:ScrollPanel>
+						<g:Tree ui:field="canvasComponentsTree">
+						</g:Tree>
+					</g:ScrollPanel>
+				</g:south>
+			</g:SplitLayoutPanel>
+		</g:center>
+	</g:DockLayoutPanel>
+</ui:UiBinder> 

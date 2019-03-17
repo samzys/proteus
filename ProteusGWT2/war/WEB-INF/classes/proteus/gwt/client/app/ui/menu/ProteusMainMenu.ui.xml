@@ -1,0 +1,112 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.panel {
+			width: 100%;
+		}
+	</ui:style>
+
+	<g:HorizontalPanel styleName="{style.panel}">
+		<g:MenuBar animationEnabled="true" autoOpen="false">
+			<g:MenuItem ui:field="miFile">
+				File
+				<g:MenuBar vertical="true">
+					<g:MenuItem ui:field="miNew">
+						New
+						<g:MenuBar vertical="true">
+							<g:MenuItem ui:field="miNewClass">Class</g:MenuItem>
+							<g:MenuItem ui:field="miNewModel">Model</g:MenuItem>
+						</g:MenuBar>
+					</g:MenuItem>
+					<g:MenuItem ui:field="miDemo">
+						Demo
+						<g:MenuBar vertical="true">
+							<g:MenuItem ui:field="mielectricalCircuit">electricalCircuit</g:MenuItem>
+							<g:MenuItem ui:field="mispringSystem">springSystem</g:MenuItem>
+							<g:MenuItem ui:field="midcMotor">dcMotor</g:MenuItem>
+							<g:MenuItem ui:field="midoublePendulum">doublePendulum</g:MenuItem>
+						</g:MenuBar>
+					</g:MenuItem>
+
+					<g:MenuItem ui:field="miOpen">Open</g:MenuItem>
+					<g:MenuItemSeparator></g:MenuItemSeparator>
+					<g:MenuItem ui:field="miSave">Save</g:MenuItem>
+					<g:MenuItem ui:field="miExportAs">
+						Export as
+						<g:MenuBar vertical="true">
+							<g:MenuItem ui:field="miExportMO">Modelica Files(.mo)</g:MenuItem>
+							<g:MenuItem ui:field="miExportPDF">PDF</g:MenuItem>
+							<g:MenuItem>
+								Image
+								<g:MenuBar vertical="true">
+									<g:MenuItem ui:field="miExportJPEG">JPEG Image</g:MenuItem>
+									<g:MenuItem ui:field="miExportPNG">PNG Image</g:MenuItem>
+									<g:MenuItem ui:field="miExportBMP">BMP Image</g:MenuItem>
+								</g:MenuBar>
+
+							</g:MenuItem>
+
+						</g:MenuBar>
+					</g:MenuItem>
+					<g:MenuItemSeparator></g:MenuItemSeparator>
+					<g:MenuItem ui:field="miPrint">Print</g:MenuItem>
+					<g:MenuItem ui:field="miExit">Exit</g:MenuItem>
+				</g:MenuBar>
+			</g:MenuItem>
+			<g:MenuItem ui:field="miEdit">
+				Edit
+				<g:MenuBar vertical="true">
+					<g:MenuItem ui:field="miUndo">Undo</g:MenuItem>
+					<g:MenuItem ui:field="miRedo">Redo</g:MenuItem>
+					<g:MenuItemSeparator></g:MenuItemSeparator>
+
+					<g:MenuItem ui:field="miDelete">Delete</g:MenuItem>
+				</g:MenuBar>
+			</g:MenuItem>
+			<g:MenuItem ui:field="miView">
+				View
+				<g:MenuBar vertical="true">
+					<g:MenuItem ui:field="miZoomIn">Zoom In</g:MenuItem>
+					<g:MenuItem ui:field="miZoomOut">Zoom Out</g:MenuItem>
+
+
+				</g:MenuBar>
+			</g:MenuItem>
+			<g:MenuItem ui:field="miModel">
+				Model
+				<g:MenuBar vertical="true">
+					<g:MenuItem ui:field="miRotateClockwise">Rotate Clockwise</g:MenuItem>
+					<g:MenuItem ui:field="miRotateAntiClockwise">Rotate Anti Clockwise</g:MenuItem>
+					<g:MenuItem ui:field="miFlipHorizontal">Flip Horizontal</g:MenuItem>
+					<g:MenuItem ui:field="miFlipVertical">Flip Vertical</g:MenuItem>
+
+					<g:MenuItemSeparator />
+					<g:MenuItem ui:field="miInsert">Insert</g:MenuItem>
+
+				</g:MenuBar>
+			</g:MenuItem>
+			<g:MenuItem>
+				Run
+				<g:MenuBar vertical="true">
+					<g:MenuItem ui:field="miSimulate">Simulate</g:MenuItem>
+
+
+					<g:MenuItem ui:field="miPlot">Plot Simulate Result</g:MenuItem>
+
+				</g:MenuBar>
+			</g:MenuItem>
+			<g:MenuItem ui:field="miHelpBar">
+				Help
+				<g:MenuBar vertical="true">
+					<g:MenuItem ui:field="miHelp">Help</g:MenuItem>
+					<g:MenuItem ui:field="miAbout">About</g:MenuItem>
+				</g:MenuBar>
+			</g:MenuItem>
+			<g:MenuItem ui:field="userLogin">
+				Login
+			</g:MenuItem>
+			<g:MenuItem ui:field = "userInfo" ></g:MenuItem>
+		</g:MenuBar>
+	</g:HorizontalPanel>
+</ui:UiBinder> 

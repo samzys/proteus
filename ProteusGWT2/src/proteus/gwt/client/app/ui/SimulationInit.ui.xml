@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		
+		.panel{
+			margin-left: 4px;
+			margin-right: 4px;
+			margin-top: 4px;
+		}
+	</ui:style>
+
+	<g:DialogBox ui:field="box" text="Simulation" animationEnabled="true">
+		<g:VerticalPanel >
+			<g:HTML wordWrap="true" addStyleNames="{style.panel}"><h2>Simulation Interval</h2>
+</g:HTML>
+			
+			<g:HorizontalPanel addStyleNames="{style.panel}">
+				<g:Label width="100px" text="Start Time:"></g:Label>
+				<g:TextBox ui:field="tbStartTime" width="150px" text="0.0"></g:TextBox>				
+			</g:HorizontalPanel >
+			
+			<g:HorizontalPanel addStyleNames="{style.panel}">
+				<g:Label width="100px" text="Stop Time:"></g:Label>
+				<g:TextBox ui:field="tbStopTime" width="150px" text="1.0"></g:TextBox>
+			</g:HorizontalPanel>
+			
+			<g:HorizontalPanel addStyleNames="{style.panel}">
+				<g:Label width="100px" text="numOfInterval:"></g:Label>
+				<g:TextBox ui:field="tbInterval" width="150px" text="500"></g:TextBox>
+			</g:HorizontalPanel>
+				
+			<g:HorizontalPanel styleName="{style.panel}">
+				<g:Button ui:field="btSimulate">Simulate</g:Button>
+				<g:Button ui:field="btCancel">Cancel</g:Button>
+			</g:HorizontalPanel>
+		
+			
+		</g:VerticalPanel>
+	</g:DialogBox>
+</ui:UiBinder> 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>proteusService</servlet-name>
+		<servlet-class>proteus.gwt.server.ProteusRemoteServiceImpl</servlet-class>
+		<init-param>
+			<param-name>WorkDir</param-name>
+			<param-value>/tmp</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>proteusService</servlet-name>
+		<url-pattern>/proteusgwt/proteusservice</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>exportMO</servlet-name>
+		<servlet-class>proteus.gwt.server.ExportMO</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>exportMO</servlet-name>
+		<url-pattern>/exportmo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>uploadMoFile</servlet-name>
+		<servlet-class>proteus.gwt.server.MoFileUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>uploadMoFile</servlet-name>
+		<url-pattern>/uploadmofile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>saveMoFile</servlet-name>
+		<servlet-class>proteus.gwt.server.SaveMoFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>saveMoFile</servlet-name>
+		<url-pattern>/savemofile</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>updateMoFile</servlet-name>
+		<servlet-class>proteus.gwt.server.UpdateMoFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateMoFile</servlet-name>
+		<url-pattern>/updatemofile</url-pattern>
+	</servlet-mapping>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>ProteusGWT.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- Proteus configuration -->
+	<env-entry>
+		<env-entry-name>ProteusRootPath</env-entry-name>
+		<env-entry-value>C:/Users/sam/workspace/ProteusGWT2/war</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>ProteusFilesPath</env-entry-name>
+		<env-entry-value>/resources/files</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>JsonFilePath</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>/resources/files/ModelJSON</env-entry-value>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>ExportPath</env-entry-name>
+		<env-entry-value>/resources/exports</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>UploadPath</env-entry-name>
+		<env-entry-value>/resources/upload</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>PwebRoot</env-entry-name>
+		<env-entry-value>C:</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
+</web-app>

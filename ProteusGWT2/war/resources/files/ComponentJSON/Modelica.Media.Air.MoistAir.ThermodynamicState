@@ -1,0 +1,1 @@
+{"ID":"2334","diagramGraphic":{"graphicList":[]},"name":"ThermodynamicState","restriction":"record","wholeName":"Modelica.Media.Air.MoistAir.ThermodynamicState","comment":"ThermodynamicState record for moist air","arrayFormList":[],"iconGraphicList":[],"connects":[],"extendComps":[],"includeComps":[],"superIncludeArgList":[],"parameters":[]}
